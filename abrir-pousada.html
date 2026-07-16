@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abrindo minha pousada — Guia para quem está começando | Coral</title>
+<meta name="description" content="O que é PMS, OTA, channel manager e tarifa dinâmica, explicado de forma simples. Guia completo para quem está abrindo uma pousada do zero.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.coralhoteleira.com.br/abrir-pousada.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.coralhoteleira.com.br/abrir-pousada.html">
+<meta property="og:title" content="Abrindo minha pousada — Guia para quem está começando | Coral">
+<meta property="og:description" content="PMS, OTA, channel manager, tarifa dinâmica — tudo explicado de forma simples para quem está abrindo uma pousada.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um PMS e eu preciso de um?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PMS significa Property Management System — sistema de gestão da propriedade. É o programa que o hotel usa para controlar reservas, disponibilidade, check-in e check-out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é uma OTA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OTA é a sigla para Online Travel Agency — agência de viagens online, como Booking.com, Airbnb e Expedia, plataformas onde hóspedes buscam e reservam acomodações."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é tarifa dinâmica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tarifa dinâmica é quando o preço do quarto muda de acordo com a demanda, em vez de ser um valor fixo o ano todo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é channel manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Channel manager é um sistema que sincroniza a disponibilidade e os preços do hotel em todas as plataformas de reserva ao mesmo tempo."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* ===== Ajustes finos: logo do menu + rodapé (Coral) ===== */
+
+  /* Logo do menu — mais solta, sem parecer "colada" */
+  .nav-logo{
+    display:flex;
+    align-items:center;
+    padding:6px 4px;
+    margin-right:16px;
+  }
+  .nav-logo img{
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .nav-logo:hover img{
+    opacity:.85;
+  }
+
+  /* Rodapé — bloco de marca no lugar da imagem */
+  .footer-brand{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .footer-wordmark{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:.5px;
+    color:#fff;
+  }
+  .footer-wordmark-accent{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#FF6B6B;
+    flex-shrink:0;
+  }
+  .footer-brand p{
+    max-width:320px;
+    line-height:1.7;
+    opacity:.75;
+  }
+
+  /* Rodapé — espaçamento geral */
+  .footer-top{
+    gap:48px;
+    padding-bottom:40px;
+  }
+  .footer-col h4{
+    margin-bottom:18px;
+    letter-spacing:1.5px;
+  }
+  .footer-col a{
+    display:block;
+    margin-bottom:12px;
+    opacity:.75;
+    transition:opacity .2s ease;
+  }
+  .footer-col a:hover{
+    opacity:1;
+  }
+  .footer-bot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    padding-top:28px;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .footer-copy{
+    opacity:.6;
+    font-size:13px;
+  }
+
+  /* Rodapé — ícones sociais em círculo, com svg */
+  .footer-socials{
+    display:flex;
+    gap:10px;
+  }
+  .footer-soc{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .footer-soc svg{
+    width:17px;
+    height:17px;
+  }
+  .footer-soc:hover{
+    background:#FF6B6B;
+    transform:translateY(-2px);
+  }
+
+  @media(max-width:768px){
+    .footer-top{
+      gap:32px;
+    }
+    .footer-bot{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+  }
+</style>
+</head>
+<body data-page="abrir-pousada">
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-coral.png" alt="Coral Consultoria Hoteleira" style="height:46px;width:auto;display:block;object-fit:contain;mix-blend-mode:multiply">
+    </a>
+    <div class="nav-tabs">
+      <a href="index.html" class="nav-tab">Início</a>
+      <a href="saiba-mais.html" class="nav-tab">Saiba mais</a>
+      <a href="abrir-pousada.html" class="nav-tab active">Abrindo minha pousada</a>
+    </div>
+    <a href="https://wa.me/5581991351085?text=Olá,+quero+conversar+sobre+minha+operação" target="_blank" class="nav-cta">Conversar agora</a>
+    <button class="nav-mob" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-drawer">
+  <a href="index.html" class="mob-tab">Início</a>
+  <a href="saiba-mais.html" class="mob-tab">Saiba mais</a>
+  <a href="abrir-pousada.html" class="mob-tab active">Abrindo minha pousada</a>
+  <a href="https://wa.me/5581991351085" target="_blank" class="btn btn-navy mob-tab" style="margin-top:20px;justify-content:center;border-radius:50px">Falar pelo WhatsApp</a>
+</div>
+
+<!-- GUIDE HERO -->
+<section class="guide-hero">
+  <div class="guide-hero-inner wrap">
+    <div class="reveal">
+      <span class="eyebrow">Guia para quem está começando</span>
+      <h1>Você tem a pousada.<br>Agora precisa entender <em>como fazer ela funcionar de verdade.</em></h1>
+      <p>Termos como PMS, OTA, channel manager, tarifa dinâmica… parece um idioma diferente. Aqui a gente explica tudo de forma simples — para você dar os primeiros passos com clareza.</p>
+      <div class="diag-form">
+        <div class="diag-form-title">Diagnóstico rápido — leva 30 segundos</div>
+        <div class="diag-row">
+          <div class="diag-field">
+            <label class="diag-label">Seu nome</label>
+            <input class="diag-input" type="text" id="diag-nome" placeholder="Como você se chama?">
+          </div>
+          <div class="diag-field">
+            <label class="diag-label">Nome da pousada</label>
+            <input class="diag-input" type="text" id="diag-pousada" placeholder="Nome da sua pousada">
+          </div>
+        </div>
+        <div class="diag-row">
+          <div class="diag-field">
+            <label class="diag-label">Quantos quartos?</label>
+            <select class="diag-select" id="diag-quartos">
+              <option value="">Selecione</option>
+              <option>Ainda não abri</option>
+              <option>Menos de 14</option>
+              <option>14 a 30 quartos</option>
+              <option>31 a 70 quartos</option>
+              <option>Mais de 70</option>
+            </select>
+          </div>
+        </div>
+        <button class="diag-btn" onclick="enviarDiagnostico()">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Quero ajuda para montar minha pousada
+        </button>
+      </div>
+      <p class="guide-hero-note">Vamos conversar pelo WhatsApp — resposta em minutos</p>
+    </div>
+    <div class="reveal d2">
+      <div class="guide-checklist">
+        <div class="guide-checklist-title">Checklist de abertura</div>
+        <ul class="guide-cl-list">
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Definir o preço das diárias por tipo de quarto e época
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Escolher e cadastrar um sistema de gestão (PMS)
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Criar conta e configurar perfil no Booking.com e Airbnb
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico pend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
+            Entender como funciona a comissão das plataformas
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico pend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
+            Definir política de cancelamento e pagamento
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico pend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
+            Organizar processos da recepção (check-in, check-out)
+          </li>
+          <li class="guide-cl-item">
+            <div class="guide-cl-ico pend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
+            Treinar a equipe para atender e vender bem
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="guide-faq">
+  <div class="guide-faq-head wrap reveal">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>As dúvidas mais comuns de quem está abrindo.</h2>
+    <p>Sem jargão. Sem enrolação. Só o que você precisa saber para começar a entender como funciona.</p>
+  </div>
+  <div class="faq-grid wrap reveal d1">
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">O que é um PMS e eu preciso de um?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer"><strong>PMS significa Property Management System</strong> — em português, sistema de gestão da propriedade. É basicamente o programa que o seu hotel usa para controlar reservas, disponibilidade, check-in e check-out.</p>
+        <p class="faq-answer">Pense nele como a "agenda digital" do seu hotel. Sem ele, você controla tudo no papel ou em planilhas — o que funciona no começo, mas vai complicando conforme as reservas aumentam.</p>
+        <div class="faq-tag-row"><span class="faq-tag">Hits Hóspede</span><span class="faq-tag">Omnibees</span><span class="faq-tag">Stays</span><span class="faq-tag">Cloudbeds</span></div>
+        <div class="faq-tip"><strong>A Coral pode te ajudar</strong> a escolher e configurar o sistema certo para o tamanho e o perfil da sua pousada — sem contratar um consultor técnico à parte.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">O que é uma OTA?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer"><strong>OTA é a sigla para Online Travel Agency</strong> — ou seja, agência de viagens online. São as plataformas onde os hóspedes buscam e reservam acomodações.</p>
+        <p class="faq-answer">Booking.com, Airbnb e Expedia são exemplos de OTAs. Elas cobram uma comissão — geralmente entre 15% e 20% — por cada reserva realizada através delas.</p>
+        <div class="faq-tag-row"><span class="faq-tag">Booking.com</span><span class="faq-tag">Airbnb</span><span class="faq-tag">Expedia</span><span class="faq-tag">TripAdvisor</span></div>
+        <div class="faq-tip"><strong>Dica prática:</strong> não dependa de uma OTA só. Estar em duas ou três plataformas aumenta a visibilidade — mas é importante entender como precificar bem em cada uma.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">Como começo a vender no Booking.com?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer">O processo é simples: você cria uma conta de parceiro no site do Booking.com, cadastra as informações da sua pousada, faz o upload das fotos, define os tipos de quarto e os preços — e aguarda a aprovação.</p>
+        <p class="faq-answer">O mais importante não é <em>cadastrar</em> — é <strong>configurar bem</strong>. Fotos de qualidade, descrição clara, política de cancelamento bem definida e preço competitivo fazem toda a diferença para aparecer bem nas buscas.</p>
+        <div class="faq-tip"><strong>Atenção:</strong> o Booking tem várias configurações que passam despercebidas e podem custar dinheiro. A Coral revisa esse cadastro com você para garantir que tudo está correto desde o início.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">O que é tarifa dinâmica?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer"><strong>Tarifa dinâmica</strong> é quando o preço do quarto muda de acordo com a demanda — em vez de ser um valor fixo o ano todo.</p>
+        <p class="faq-answer">Por exemplo: no feriado de Carnaval, a procura é alta — então o preço sobe. Na baixa temporada de março, a procura cai — então o preço pode ser menor para atrair mais reservas.</p>
+        <p class="faq-answer">Hotéis que trabalham com tarifa dinâmica geralmente conseguem mais receita do que os que cobram o mesmo valor sempre — porque aproveitam melhor os momentos de alta procura.</p>
+        <div class="faq-tip"><strong>É exatamente isso que a Coral faz:</strong> acompanha o movimento e ajusta os preços para garantir que você está cobrando o valor certo na hora certa.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">O que é channel manager?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer"><strong>Channel manager</strong> é um sistema que sincroniza a disponibilidade e os preços do seu hotel em todas as plataformas ao mesmo tempo.</p>
+        <p class="faq-answer">Sem ele, se você receber uma reserva no Booking, precisa manualmente atualizar a disponibilidade no Airbnb, no Expedia e em qualquer outro lugar em que estiver. O channel manager faz isso automaticamente, evitando que você venda o mesmo quarto duas vezes.</p>
+        <div class="faq-tip"><strong>Para pousadas pequenas começando:</strong> nem sempre é necessário desde o primeiro dia. Mas conforme o volume cresce, se torna indispensável.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">Como definir o preço das diárias?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer">Essa é uma das perguntas mais comuns — e uma das mais importantes de responder bem. O preço errado pode afastar clientes (se estiver alto demais) ou deixar dinheiro na mesa (se estiver baixo demais).</p>
+        <p class="faq-answer">Alguns pontos para considerar: <strong>quanto seus concorrentes cobram</strong> na mesma época, <strong>seus custos fixos e variáveis</strong>, o <strong>perfil do seu hóspede</strong> e o <strong>posicionamento</strong> que você quer para a pousada.</p>
+        <p class="faq-answer">Não existe fórmula única — cada pousada tem uma realidade diferente. É por isso que a Coral não usa uma tabela genérica: a estratégia de preços é construída para o seu hotel.</p>
+        <div class="faq-tip"><strong>Erro comum:</strong> copiar o preço do concorrente sem entender o custo da sua própria operação. Isso pode fazer você trabalhar muito e ganhar pouco.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">Preciso de um site próprio ou o Booking é suficiente?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer">As OTAs são ótimas para aparecer para quem ainda não te conhece. Mas elas cobram comissão em cada reserva — então quanto mais você vende direto (pelo seu site ou WhatsApp), mais fica para você.</p>
+        <p class="faq-answer">Um site próprio simples, com motor de reservas, já resolve bem para a maioria das pousadas. O Instagram e o WhatsApp também geram reservas diretas — e têm custo zero de comissão.</p>
+        <div class="faq-tip"><strong>Estratégia saudável:</strong> usar as OTAs para ganhar visibilidade e novos clientes, e investir em reserva direta para quem já te conhece.</div>
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span class="faq-q-text">O que é taxa de ocupação e por que importa?</span>
+        <span class="faq-q-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-answer"><strong>Taxa de ocupação</strong> é a porcentagem dos seus quartos que estão alugados num determinado período. Se você tem 10 quartos e 7 estão ocupados hoje, a ocupação é de 70%.</p>
+        <p class="faq-answer">É uma das métricas mais básicas da hotelaria — mas sozinha não diz tudo. Um hotel com 60% de ocupação e preço alto pode ganhar mais do que outro com 90% de ocupação e preço baixo.</p>
+        <p class="faq-answer">Por isso olhar só para ocupação é uma armadilha comum. O que importa é a combinação entre ocupação e preço — e é aí que a estratégia tarifária entra.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE DE ABERTURA -->
+<section class="guide-steps">
+  <div class="guide-steps-head wrap reveal">
+    <div class="guide-img reveal">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80&fit=crop" alt="Praia tranquila" loading="lazy">
+    </div>
+    <span class="eyebrow">Por onde começar</span>
+    <h2>A ordem certa faz diferença.</h2>
+    <p>Quem monta a operação na sequência certa economiza tempo, dinheiro e retrabalho lá na frente.</p>
+  </div>
+  <div class="timeline wrap reveal d1">
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-num">1</div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Defina o posicionamento e os preços base</div>
+        <p class="tl-text">Antes de qualquer cadastro em plataforma, você precisa saber quanto vai cobrar, para quem está vendendo e como quer ser percebido. Isso define tudo que vem depois.</p>
+        <span class="tl-coral">A Coral ajuda nessa etapa</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-num">2</div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Escolha e configure seu sistema de gestão (PMS)</div>
+        <p class="tl-text">Não comece a receber reservas sem ter um sistema para controlar tudo. Depois que as reservas chegam, migrar de sistema é muito mais trabalhoso.</p>
+        <span class="tl-coral">A Coral indica e ajuda a configurar</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-num">3</div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Cadastre nas plataformas certas para o seu perfil</div>
+        <p class="tl-text">Booking.com e Airbnb são as principais — mas o cadastro bem feito importa tanto quanto estar lá. Fotos boas, descrição clara e política bem definida.</p>
+        <span class="tl-coral">A Coral revisa o cadastro com você</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-num">4</div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Organize os processos da recepção</div>
+        <p class="tl-text">Como será o check-in? Como a equipe vai lidar com pedidos especiais? Como registrar o pagamento? Esses processos simples, documentados desde o início, evitam muito problema depois.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-num">5</div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Acompanhe os números desde o primeiro mês</div>
+        <p class="tl-text">Ocupação, receita, de onde vieram as reservas — esses dados orientam as decisões. Quanto antes você começa a olhar para eles, mais rápido aprende o que está funcionando.</p>
+        <span class="tl-coral">A Coral acompanha junto com você</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="guide-cta">
+  <div class="guide-cta-inner reveal wrap">
+    <span class="eyebrow">Pronto para começar?</span>
+    <h2>A Coral pode montar tudo isso por você.</h2>
+    <p>Você não precisa entender de PMS, OTA ou channel manager para abrir uma pousada de sucesso. Só precisa de alguém que entenda — e que faça junto com você.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5581991351085?text=Olá,+estou+abrindo+uma+pousada+e+preciso+de+ajuda+para+começar+do+zero" target="_blank" class="btn btn-navy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Quero ajuda para montar minha pousada
+      </a>
+      <a href="mailto:Coral.consultoriahoteleira@gmail.com" class="btn btn-outline">Prefiro enviar um e-mail</a>
+    </div>
+    <div class="guide-cta-trust">
+      <span>Atendemos quem está abrindo do zero</span>
+      <span>Atendemos todo o Brasil</span>
+      <span>Resposta em até 24h</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-wordmark"><span class="footer-wordmark-accent"></span>Coral</div>
+        <p>Consultoria para pousadas e hotéis independentes que querem vender melhor, organizar o dia a dia e crescer com consistência.</p>
+        <div class="footer-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Atendimento em todo o Brasil
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <a href="index.html">Início</a>
+        <a href="saiba-mais.html">Saiba mais</a>
+        <a href="abrir-pousada.html">Abrindo minha pousada</a>
+      </div>
+      <div class="footer-col">
+        <h4>Neste guia</h4>
+        <a href="abrir-pousada.html">O que é PMS</a>
+        <a href="abrir-pousada.html">O que é OTA</a>
+        <a href="abrir-pousada.html">Como funciona o Booking</a>
+        <a href="abrir-pousada.html">Tarifa dinâmica</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5581991351085" target="_blank">WhatsApp</a>
+        <a href="mailto:Coral.consultoriahoteleira@gmail.com">E-mail</a>
+        <a href="https://instagram.com/consultoriacoral" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/company/coral-consultoria-hoteleira/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span class="footer-copy">© 2025 <span class="footer-accent">Coral Consultoria Hoteleira</span> — Todos os direitos reservados</span>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/coral-consultoria-hoteleira/" class="footer-soc" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://instagram.com/consultoriacoral" class="footer-soc" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072c-4.358.2-6.78 2.618-6.98 6.98C.014 8.332 0 8.74 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.332 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/5581991351085" class="footer-soc" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP POPUP -->
+<div class="wa-popup" id="wa-popup">
+  <div class="wa-popup-header">
+    <div class="wa-popup-avatar">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+    <div class="wa-popup-info">
+      <div class="wa-popup-name">Coral Consultoria</div>
+      <div class="wa-popup-status">Online agora</div>
+    </div>
+    <button class="wa-popup-close" onclick="closePopup()" aria-label="Fechar">✕</button>
+  </div>
+  <div class="wa-popup-body">
+    <div class="wa-popup-bubble" id="wa-popup-msg">
+      Está abrindo uma pousada? A Coral pode ajudar a montar tudo do zero! 🏨
+    </div>
+    <div class="wa-popup-time">agora</div>
+    <a class="wa-popup-btn" id="wa-popup-link" href="https://wa.me/5581991351085?text=Olá,+estou+abrindo+uma+pousada+e+quero+ajuda" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Responder no WhatsApp
+    </a>
+  </div>
+  <div class="wa-popup-footer">Normalmente respondemos em poucos minutos 🌊</div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float" id="wa-float">
+  <a id="wa-link" href="https://wa.me/5581991351085?text=Olá,+estou+abrindo+uma+pousada+e+quero+ajuda" target="_blank" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span id="wa-text">Conversar agora</span>
+  </a>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
