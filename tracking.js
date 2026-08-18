@@ -1,30 +1,11 @@
 /**
  * tracking.js — Coral | captura de sessão + eventos de funil
- *
- * Uso no site do hotel:
- * <script src="https://SEU_PROJETO.supabase.co/storage/v1/.../tracking.js"
- *         data-hotel="slug-do-hotel"
- *         data-endpoint="https://SEU_PROJETO.supabase.co/functions/v1/track"
- *         defer></script>
- *
- * A sessão é criada/garantida automaticamente ao carregar a página.
- *
- * Pra registrar um evento de funil específico (ex: clique no WhatsApp
- * ou no motor de reservas), chame em qualquer lugar do site depois
- * que o script carregar:
- *
- *   window.coralTrack('whatsapp_started');
- *   window.coralTrack('booking_engine_started');
- *
- * Tipos aceitos (têm que bater com o schema — outros são ignorados
- * pela Edge Function): ad_click, landing_page, whatsapp_started,
- * booking_engine_started, booking_confirmed, lead_reserved,
- * lead_lost, followup, reservation_cancelled.
  */
 (function () {
   var scriptTag = document.currentScript;
   var hotelSlug = scriptTag.getAttribute("data-hotel");
   var endpoint = scriptTag.getAttribute("data-endpoint");
+  var token = scriptTag.getAttribute("data-token");
 
   if (!hotelSlug || !endpoint) {
     console.warn("[coral-tracking] data-hotel ou data-endpoint ausente — script não iniciado.");
@@ -48,9 +29,15 @@
   var sessionKey = getSessionKey();
 
   function send(payload) {
+    var headers = { "Content-Type": "application/json" };
+
+    if (token) {
+      headers["X-Coral-Token"] = token;
+    }
+
     return fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers,
       body: JSON.stringify(payload),
       keepalive: true,
     }).catch(function (err) {
@@ -64,6 +51,7 @@
 
   // Chamada automática — garante a sessão, sem event_type
   var params = new URLSearchParams(window.location.search);
+
   send({
     slug: hotelSlug,
     session_key: sessionKey,
