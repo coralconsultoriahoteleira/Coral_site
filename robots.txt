@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://consultoriacoral.com.br/sitemap.xml
+Sitemap: https://www.consultoriacoral.com.br/sitemap.xml
